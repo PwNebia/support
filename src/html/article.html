@@ -1,0 +1,208 @@
+{% extends 'layouts/application.html' %}
+
+{% block content %}
+
+<div class="container">
+  <nav class="article-sub-nav">
+    {% call fakeData('{{ breadcrumbs }}', zdTemplatingEnabled) %}
+      <ol class="breadcrumbs">
+        <li title="Home">
+          <a href="#!">Home</a>
+        </li>
+        <li title="Installation">
+          <a href="#!">Installation</a>
+        </li>
+        <li title="04. Prepare the Bracket">04. Prepare the Bracket</li>
+      </ol>
+    {% endcall %}
+
+    {# {% call fakeData('{{search scoped=true submit=false}}', zdTemplatingEnabled) %}{% endcall %} #}
+    <section class="article-search">
+      <form accept-charset="UTF-8" action="/hc/en-us/search" class="search" method="get" role="search">
+        <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input id="query" name="query" placeholder="Search Nebia Support" type="search" />
+        <button class="search-btn" type="submit">{{ sprite('search') }}</button>
+      </form>
+    </section>
+  </nav>
+</div>
+
+<div class="article-bg">
+  <div class="container">
+    <div class="article-container" id="article-container">
+      <section class="article-sidebar">
+        <section class="section-articles collapsible-sidebar">
+          <h3 class="section-articles__title">
+            {% call fakeData("{{t 'articles_in_section'}}", zdTemplatingEnabled) %}
+              Installation
+            {% endcall %}
+            <button class="section-articles__mobile-toggle">
+              <span class="-closed">{{ sprite('arrow-down--large') }}</span>
+              <span class="-opened">{{ sprite('cross') }}</span>
+            </button>
+          </h3>
+          <ul class="section-articles__list">
+            {% for item in range(0, 11) %}
+              <li class="{{ ' -is-active' if loop.first }}">
+                {% if loop.first %}
+                  Article title
+                {% else %}
+                  <a href="#!" class="section-article__link">Article title </a>
+                {% endif %}
+
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      </section>
+
+
+      <article class="article">
+        <header class="article-header">
+          <h1 title="{{article.title}}" class="article-title">
+            {% call fakeData('{{article.title}}', zdTemplatingEnabled) %}
+              {{ article.title }}
+            {% endcall %}
+          </h1>
+        </header>
+
+        <section class="article-info">
+          <div class="article-content">
+            <figure class="article-video video-container">
+              <iframe src="https://player.vimeo.com/video/{{ article.videoId }}?color=1882c4&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </figure>
+
+            <div class="article-body">
+              {% call fakeData('{{article.body}}', zdTemplatingEnabled) %}{% endcall %}
+              {% for graf in article.text %}
+                <p>{{ graf | safe }}</p>
+              {% endfor %}
+
+              <div class="article-caution">
+                <div class="article-caution__icon">
+                  {{ sprite('caution') }}
+                </div>
+                <div class="article-caution__text">
+                  <div class="article-caution__title">Caution</div>
+                  <div class="article-caution__desc">{{ article.caution }}</div>
+                </div>
+              </div>
+
+              <ol class="article-body__steps">
+                {% for step in article.steps %}
+                  <li>{{ step | safe }}</li>
+                {% endfor %}
+              </ol>
+
+{#
+              <div class="article-troubleshooting">
+                <h2 class="article-troubleshooting__title">Having trouble with this step?</h2>
+                <ul class="article-troubleshooting__list">
+                  {% for item in article.accordion %}
+                    <li>
+                      <button class="article-troubleshooting__item-toggle">
+                        <h3 class="article-troubleshooting__item-title">{{ item.title }}</h3>
+                        <span class="article-troubleshooting__item-toggle-icon">
+                          <span class="-closed">{{ sprite('arrow-down--large') }}</span>
+                          <span class="-opened">{{ sprite('cross') }}</span>
+                        </span>
+                      </button>
+                      <div class="article-troubleshooting__item-details">
+                        <figure class="article-troubleshooting__item-video video-container">
+                          <iframe src="https://player.vimeo.com/video/196371829?color=1882c4&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        </figure>
+                        {% for graf in item.text %}
+                          <p>{{ graf }}</p>
+                        {% endfor %}
+                      </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+#}
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, ea aperiam alias! Inventore repellendus tenetur hic, voluptate possimus ex dignissimos aut incidunt ratione exercitationem quisquam, fugit libero vel nulla alias.</p>
+
+              <div class="article-prev-next">
+                <div class="article-prev"><a href="{{ article.previous.link }}">{{ sprite('arrow-left--double') }} <span class="-text">{{ article.previous.title }}</span></a></div>
+                <div class="article-next"><a href="{{ article.next.link }}"><span class="-text">{{ article.next.title }}</span> {{ sprite('arrow-right--double') }}</a></div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <footer>
+          <div class="article-footer">
+
+          </div>
+          {% call fakeData('{{#with article}}', zdTemplatingEnabled) %}{% endcall %}
+            <div class="article-votes">
+              <span class="article-votes-question">
+                {% call fakeData("{{t 'was_this_article_helpful'}}", zdTemplatingEnabled) %}
+                  Was this Article Helpful?
+                {% endcall %}
+              </span>
+              <div class="article-votes-controls" role='radiogroup'>
+                {% call fakeData("{{vote 'up' role='radio' class='button article-vote article-vote-up'}}", zdTemplatingEnabled) %}
+                  <a role="radio" rel="nofollow" class="button article-vote article-vote-up" title="Yes" aria-selected="false" href="#"></a>
+                {% endcall %}
+                {% call fakeData("{{vote 'down' role='radio' class='button article-vote article-vote-down'}}", zdTemplatingEnabled) %}
+                  <a role="radio" rel="nofollow" class="button article-vote article-vote-down" title="No" aria-selected="false" href="#"></a>
+                {% endcall %}
+              </div>
+            </div>
+          {% call fakeData('{{/with}}', zdTemplatingEnabled) %}{% endcall %}
+        </footer>
+
+        <section class="article-relatives">
+          {% call fakeData('{{recent_articles}}', zdTemplatingEnabled) %}
+          <section class="recent-articles">
+            <h3>Recently viewed articles</h3>
+            <ul>
+              <li>
+                <a href="/hc/en-us/articles/236023988-What-are-these-sections-and-articles-doing-here-">What are these sections and articles doing here?</a>
+              </li>
+              <li>
+                <a href="/hc/en-us/articles/236023968-Welcome-to-your-Help-Center-">Welcome to your Help Center!</a>
+              </li>
+              <li>
+                <a href="/hc/en-us/articles/115000254188-Meet-Your-Nebia-Shower-System">Meet Your Nebia Shower System</a>
+              </li>
+              <li>
+                <a href="/hc/en-us/articles/115000295967-I-have-thick-hair-with-the-Nebia-shower-be-able-to-wash-out-shampoo-and-conditioner-">I have thick hair, with the Nebia shower be able to wash out shampoo and conditioner?</a>
+              </li>
+              <li>
+                <a href="/hc/en-us/articles/115000295827-How-much-water-will-I-save-">How much water will I save?</a>
+              </li>
+            </ul>
+          </section>
+          {% endcall %}
+          {% call fakeData('{{related_articles}}', zdTemplatingEnabled) %}
+          <section class="related-articles">
+            <h3>Related articles</h3>
+            <ul>
+              <li>
+                <a href="/hc/en-us/articles/236024028-How-do-I-publish-my-content-in-other-languages-?preview%5Btheme_id%5D=216349968&amp;preview_as_role=end_user&amp;use_theme_settings=false">How do I publish my content in other languages?</a>
+              </li>
+              <li>
+                <a href="/hc/en-us/articles/236023988-What-are-these-sections-and-articles-doing-here-?preview%5Btheme_id%5D=216349968&amp;preview_as_role=end_user&amp;use_theme_settings=false">What are these sections and articles doing here?</a>
+              </li>
+              <li>
+                <a href="/hc/en-us/articles/236023968-Welcome-to-your-Help-Center-?preview%5Btheme_id%5D=216349968&amp;preview_as_role=end_user&amp;use_theme_settings=false">Welcome to your Help Center!</a>
+              </li>
+            </ul>
+          </section>
+          {% endcall %}
+        </section>
+
+      </article>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

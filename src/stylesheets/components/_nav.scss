@@ -1,0 +1,9 @@
+.article-sub-nav {
+  padding: units(3) 0;
+
+  @include bp(medium) {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+}

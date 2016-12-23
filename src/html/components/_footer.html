@@ -1,0 +1,24 @@
+<footer class="footer">
+  <div class="footer-inner container">
+    <div class="footer-text">
+      <div class="footer-logo">
+        {{ sprite('nebia-logo', viewBox='0 0 355.332 75.227') }}
+      </div>
+      <ul class="footer-links">
+        <li>&copy; 2016 Nebia, San Francisco</li>
+        <li><a href="http://www.nebia.com">nebia.com</a></li>
+        <li><a href="#!">contact us</a></li>
+      </ul>
+    </div>
+    <div class="footer-share">
+      {% call fakeData('{{share}}', zdTemplatingEnabled) %}
+        <ul class="share">
+          <li><a href="#!" class="share-facebook">Facebook</a></li>
+          <li><a href="#!" class="share-twitter">Twitter</a></li>
+          <li><a href="#!" class="share-linkedin">LinkedIn</a></li>
+          <li><a href="#!" class="share-googleplus">Google+</a></li>
+        </ul>
+      {% endcall %}
+    </div>
+  </div>
+</footer>

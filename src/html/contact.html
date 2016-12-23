@@ -1,0 +1,80 @@
+{% extends 'layouts/application.html' %}
+
+{% block content %}
+
+<div class="container">
+  <nav class="article-sub-nav">
+    {% call fakeData('{{ breadcrumbs }}', zdTemplatingEnabled) %}
+      <ol class="breadcrumbs">
+        <li title="Home">
+          <a href="#!">Home</a>
+        </li>
+        <li title="Installation">
+          <a href="#!">Installation</a>
+        </li>
+        <li title="04. Prepare the Bracket">04. Prepare the Bracket</li>
+      </ol>
+    {% endcall %}
+
+    {# {% call fakeData('{{search scoped=true submit=false}}', zdTemplatingEnabled) %}{% endcall %} #}
+    <section class="article-search">
+      <form accept-charset="UTF-8" action="/hc/en-us/search" class="search" method="get" role="search">
+        <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input id="query" name="query" placeholder="Search Nebia Support" type="search" />
+        <button class="search-btn" type="submit">{{ sprite('search') }}</button>
+      </form>
+    </section>
+  </nav>
+</div>
+
+<section class="contact-form">
+  <div class="container">
+    <h1 class="contact-form__title">Submit a Request</h1>
+    <div class="form">
+      <form accept-charset="UTF-8" action="/hc/en-us/requests?preview%5Btheme_id%5D=115000180628&amp;preview_as_role=end_user&amp;use_theme_settings=false" class="request-form" data-form="" id="new_request" method="post" name="new_request">
+        <input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="Mr0PZtlW0UW5IgHX62g93Xs/7KJXGBeKI8eC7HgJLncU86HwAenV28dgCvSF5j/mJni3h1HoQo9/SqKZhfO7Fg=="><input id="preview_theme_id" name="preview[theme_id]" type="hidden" value="115000180628"><input id="preview_as_role" name="preview_as_role" type="hidden" value="end_user">
+
+        <div class="form-field string required request_subject">
+          <label for="request_subject">Subject</label> <input id="request_subject" maxlength="150" name="request[subject]" size="150" type="text">
+        </div>
+
+        <div class="suggestion-list" data-hc-class="searchbox" data-hc-suggestion-list="true"></div>
+
+        <div class="form-field text required request_description">
+          <label for="request_description">Description</label>
+          <textarea id="request_description" name="request[description]"></textarea>
+          {# <p>Please enter the details of your request. A member of our support staff will respond as soon as possible.</p> #}
+        </div>
+
+        <div class="form-field">
+          <label>Attachments</label>
+          <div class="upload-dropzone" id="upload-dropzone">
+            <input data-create-url="/hc/en-us/request_uploads?preview%5Btheme_id%5D=115000180628&amp;preview_as_role=end_user&amp;use_theme_settings=false" data-delete-confirm-msg="" data-dropzone="upload-dropzone" data-error="upload-error" data-fileupload="true" data-name="request[attachments][]" data-pool="request-attachments-pool" id="request-attachments" multiple="true" type="file"> <span><a>Add file</a> or drop files here</span>
+          </div>
+          <div class="notification notification-error notification-inline" id="upload-error" style="display: none;">
+            <span data-upload-error-message=""></span>
+          </div>
+          <ul class="upload-pool" data-screencasts="null" data-template="upload-template" data-uploads="null" id="request-attachments-pool"></ul>
+          <script id="upload-template" type="text/html">
+          <li class="upload-item" data-upload-item>
+          <a class="upload-link" target="_blank" data-upload-link></a>
+          <p class="upload-path" data-upload-path></p>
+          <span class="upload-remove" data-upload-remove></span>
+          <div class="upload-progress" data-upload-progress></div>
+          <input type="hidden">
+          </li>
+          </script>
+        </div>
+
+        <footer>
+          <input name="commit" type="submit" value="Submit">
+        </footer>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
+
+

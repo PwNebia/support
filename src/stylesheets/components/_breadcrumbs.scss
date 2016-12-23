@@ -1,0 +1,17 @@
+.breadcrumbs {
+  li {
+    display: inline-block;
+
+    &:not(:last-child) {
+      &::after {
+        content: '>';
+        display: inline-block;
+        margin: 0 units(0.25);
+      }
+    }
+  }
+
+  @include bp(small-down) {
+    font-size: 14px;
+  }
+}

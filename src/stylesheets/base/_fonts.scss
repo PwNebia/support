@@ -1,0 +1,76 @@
+$fonts: (
+  sans-serif : 'Museo Sans Rounded',
+  serif      : 'Tiempos Text'
+);
+
+@font-face {
+    font-family: 'Museo Sans Rounded';
+    src: url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/museosansrounded-100-webfont.woff2') format('woff2'),
+         url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/museosansrounded-100-webfont.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+// @font-face {
+//     font-family: 'Museo Sans Rounded';
+//     src: url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/museosansrounded-300-webfont.woff2') format('woff2'),
+//          url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/museosansrounded-300-webfont.woff') format('woff');
+//     font-weight: 300;
+//     font-style: normal;
+// }
+@font-face {
+    font-family: 'Museo Sans Rounded';
+    src: url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/museosansrounded-500-webfont.woff2') format('woff2'),
+         url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/museosansrounded-500-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Museo Sans Rounded';
+    src: url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/museosansrounded-700-webfont.woff2') format('woff2'),
+         url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/museosansrounded-700-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+// @font-face {
+//     font-family: 'Museo Sans Rounded';
+//     src: url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/museosansrounded-900-webfont.woff2') format('woff2'),
+//          url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/museosansrounded-900-webfont.woff') format('woff');
+//     font-weight: 900;
+//     font-style: normal;
+// }
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/tiemposText-Regular.woff2') format('woff2'),
+         url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/tiemposText-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/tiemposText-RegularItalic.woff2') format('woff2'),
+         url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/tiemposText-RegularItalic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+// @font-face {
+//     font-family: 'Tiempos Text';
+//     src: url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/tiemposText-Semibold.woff2') format('woff2'),
+//          url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/tiemposText-Semibold.woff') format('woff');
+//     font-weight: 600;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'Tiempos Text';
+//     src: url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/tiemposText-SemiboldItalic.woff2') format('woff2'),
+//          url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/tiemposText-SemiboldItalic.woff') format('woff');
+//     font-weight: 600;
+//     font-style: italic;
+// }
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/tiemposText-Bold.woff2') format('woff2'),
+         url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/tiemposText-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+

@@ -1,0 +1,73 @@
+.search-results {
+  border-top: 2px solid color(gallery);
+  padding: units(4) 0;
+}
+
+.search-results__query {
+  @extend %heading--smaller;
+  border-bottom: 2px solid color(gallery);
+  padding-bottom: units(4);
+}
+
+.search-result {
+  padding: units(4) 0;
+
+  &:not(:last-child) {
+    border-bottom: 2px solid color(gallery);
+  }
+}
+
+.search-result__title {
+  @extend %body--medium;
+  margin-bottom: units(1);
+}
+
+.search-result__excerpt {
+  @extend %body--medium;
+  font-family: font(serif);
+}
+
+//These classes are taken directly from the Zendesk pagination structure
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    @extend %body--large;
+
+    &:not(:first-child) {
+      margin-left: -2px;
+    }
+
+    a {
+      border: 2px solid color(denim);
+      display: block;
+      padding: units(0.75) units(2);
+
+      &:focus,
+      &:hover {
+        background-color: rgba(color(denim), 0.75);
+        color: #fff;
+        opacity: 1;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.pagination-current {
+  background-color: color(denim);
+  border: 2px solid color(denim);
+  color: #fff;
+  padding: units(0.75) units(2);
+}
+
+// .pagination-next {
+// }
+
+// .pagination-last {
+// }

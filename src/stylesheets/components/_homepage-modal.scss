@@ -1,0 +1,77 @@
+.modal {
+  align-items: center;
+  background-color: rgba(#000, 0.75);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity 0.4s, visibility 0.4s;
+  visibility: hidden;
+
+  &.-is-open {
+    opacity: 1;
+    visibility: visible;
+
+    .modal-inner {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.modal-inner {
+  max-width: 960px;
+  opacity: 0;
+  position: relative;
+  transition: opacity 0.4s 0.5s, visibility 0.4s 0.5s;
+  visibility: hidden;
+  width: 95%;
+
+  @include bp(small) {
+    width: 80%;
+  }
+}
+
+.modal-video-container {
+  background-color: color(gallery);
+  box-shadow: 0 0 50px #000;
+  padding-top: 56.25%;
+  position: relative;
+
+  iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.modal-close-btn {
+  bottom: 100%;
+  color: #fff;
+  left: 50%;
+  margin: 0 0 units(1) -15px;
+  position: absolute;
+
+  @include bp(small) {
+    left: 100%;
+    margin: 0 0 0 units(1);
+    top: 0;
+  }
+
+  &:focus,
+  &:hover {
+    color: color(denim);
+    outline: none;
+  }
+
+  svg {
+    stroke: currentColor;
+    width: 30px;
+  }
+}

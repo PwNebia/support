@@ -1,0 +1,53 @@
+{% extends 'layouts/application.html' %}
+
+{% block content %}
+
+<div class="container">
+  <nav class="article-sub-nav">
+    {% call fakeData('{{ breadcrumbs }}', zdTemplatingEnabled) %}
+      <ol class="breadcrumbs">
+        <li title="Home">
+          <a href="#!">Home</a>
+        </li>
+        <li title="Installation">
+          <a href="#!">Installation</a>
+        </li>
+        <li title="04. Prepare the Bracket">04. Prepare the Bracket</li>
+      </ol>
+    {% endcall %}
+
+    {# {% call fakeData('{{search scoped=true submit=false}}', zdTemplatingEnabled) %}{% endcall %} #}
+    <section class="article-search">
+      <form accept-charset="UTF-8" action="/hc/en-us/search" class="search" method="get" role="search">
+        <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input id="query" name="query" placeholder="Search Nebia Support" type="search" />
+        <button class="search-btn" type="submit">{{ sprite('search') }}</button>
+      </form>
+    </section>
+  </nav>
+
+  <section class="index">
+    <h1 class="index__title">Installation Articles</h1>
+    <div class="index-columns">
+      {% for i in range(0, 2) %}
+      <div class="index-column">
+        <h1 class="index-column__title">Installation</h1>
+        <ul class="index-column__links">
+          {% for i in range(0, 7) %}
+            <li class="index-column__link">
+              <a href="#!">{{ loop.index }} Example step title </a>
+            </li>
+          {% endfor %}
+          <li class="index-column__link -see-more">
+            <a href="#!">See more </a>
+          </li>
+        </ul>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+</div>
+
+{% endblock %}
+
+

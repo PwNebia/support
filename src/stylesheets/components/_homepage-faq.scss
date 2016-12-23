@@ -1,0 +1,122 @@
+.faq {
+  background-color: color(brightGray);
+  padding: units(8) 0;
+}
+
+.faq__title {
+  @extend %heading--medium;
+  color: #fff;
+  margin-bottom: units(2);
+  text-align: center;
+}
+
+.faq__info {
+  @extend %body--medium;
+  color: #fff;
+  font-family: font(serif);
+  text-align: center;
+}
+
+.faq__items-container {
+  margin-top: units(5);
+
+  &.-is-columns {
+    @include bp(medium) {
+      display: flex;
+    }
+
+    .faq__items {
+      @include bp(medium) {
+        padding: units(2);
+        width: (100% / 3);
+      }
+    }
+  }
+}
+
+.faq__btn {
+  display: flex;
+  font-family: font(sans-serif);
+  padding: units(1);
+  text-align: left;
+  width: 100%;
+
+  &.-is-open {
+    .faq__item__icon svg {
+      fill: #fff;
+      transform: rotate(0deg);
+    }
+
+    .faq__item__answer {
+      display: block;
+    }
+  }
+
+  &:focus {
+    background-color: rgba(#000, 0.1);
+    outline: 0;
+  }
+}
+
+.faq__item__icon {
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-right: units(1.5);
+
+  svg {
+    fill: color(denim);
+    margin-top: units(0.5);
+    transform: rotate(-90deg);
+    transition: all 0.3s;
+    width: 20px;
+  }
+}
+
+.faq__item__text {
+  color: #fff;
+  width: 100%;
+
+  img {
+    display: none; //How does Nebia feel about this?
+  }
+}
+
+.faq__item__title {
+  @extend %body--medium;
+  font-weight: 100;
+  margin-bottom: units(1.5);
+}
+
+.faq__item__answer {
+  color: color(gray);
+  display: none;
+  font-family: font(serif);
+  line-height: 1.4;
+}
+
+.faq__help {
+  @extend %body--medium;
+  color: #fff;
+  font-family: font(serif);
+  padding-top: units(5);
+  position: relative;
+  text-align: center;
+
+  &::before {
+    background: linear-gradient(to right, transparent 0%, #{color(charade)} 40%, #{color(charade)} 60%, transparent 100%);
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  svg {
+    fill: none;
+    margin-right: units(1.5);
+    stroke: #fff;
+    vertical-align: middle;
+    width: 30px;
+  }
+}

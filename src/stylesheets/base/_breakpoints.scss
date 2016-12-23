@@ -1,0 +1,28 @@
+$xsmall : 400px;
+$small  : 600px;
+$medium : 960px;
+$large  : 1280px;
+$xlarge : 1920px;
+
+$breakpoints: (
+  tiny-only   : '(max-width: #{$xsmall - 1px})',
+  xsmall      : '(min-width: #{$xsmall})',
+  xsmall-only : '(min-width: #{$xsmall}) and (max-width: #{$small - 1px})',
+  small       : '(min-width: #{$small})',
+  small-only  : '(min-width: #{$small}) and (max-width: #{$medium - 1px})',
+  small-down  : '(max-width: #{$small - 1px})',
+  medium      : '(min-width: #{$medium})',
+  medium-only : '(min-width: #{$medium}) and (max-width: #{$large - 1px})',
+  medium-down : '(max-width: #{$medium - 1px})',
+  large       : '(min-width: #{$large})',
+  large-only  : '(min-width: #{$large}) and (max-width: #{$xlarge - 1px})',
+  xlarge      : '(min-width: #{$xlarge})'
+);
+
+@mixin bp($breakpoint) {
+  $bp: get-bp($breakpoint);
+
+  @media #{$bp} {
+    @content;
+  }
+}

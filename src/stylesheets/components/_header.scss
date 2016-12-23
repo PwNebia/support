@@ -1,0 +1,70 @@
+//Pulled straight from Nebia's current site (post-processing)
+.header.-fixed {
+    background: rgba(27, 30, 37, .85);
+    opacity: 1;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    position: fixed;
+    transform: translateY(0);
+    transition: transform .25s ease-out;
+    z-index: 5;
+    top: 0;
+    width: 100%;
+}
+// end code dump
+
+//Add padding for fixed header
+body {
+  padding-top: 50px;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__logo {
+  svg {
+    color: #fff;
+    fill: color(denim);
+    width: 114px;
+  }
+}
+
+.header__nav {
+  /**** TEMP *************/
+  @include bp(medium-down) {
+    display: none;
+  }
+  /**********************/
+
+  align-items: center;
+  display: flex;
+
+  li {
+    margin-left: units(5);
+
+    a {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 100;
+    }
+
+    .button.-preorder {
+      align-items: center;
+      background: color(denim);
+      border-radius: 80px;
+      border: none;
+      display: flex;
+      font-size: 16px;
+      font-size: 16px;
+      height: 32px;
+      max-width: 184px;
+      padding: 0 20px;
+      text-transform: uppercase;
+      vertical-align: middle;
+      white-space: nowrap;
+      width: 220px;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "title": "Nebia Help Center",
+
+  "zdTemplatingEnabled": false,
+
+  "categories": [
+    {
+      "name": "My Nebia Order",
+      "icon": "basket"
+    },
+    {
+      "name": "Compatability for the Nebia Shower",
+      "icon": "puzzle"
+    },
+    {
+      "name": "General Maintenance",
+      "icon": "tools"
+    },
+    {
+      "name": "Using the Nebia Shower System",
+      "icon": "droplet"
+    },
+    {
+      "name": "Problems with my Nebia Shower",
+      "icon": "caution2"
+    },
+    {
+      "name": "Uninstalling the Nebia Shower",
+      "icon": "cross2"
+    }
+  ],
+
+  "faq": {
+    "question": "I have long curly hair, will the shower work for me?",
+    "answer": "Yes! We have tested Nebia with over 500 people, optimizing for all hair types and lengths."
+  },
+
+  "article": {
+    "title": "Getting Started",
+    "text": [
+      "Before starting, make sure to have reviewed the compatibility requirements. <a href=\"#!\">Download PDF installation guide</a>.",
+      "The Nebia Shower System has been designed to the highest standards of experience, design, and water efficiency. Our H2Micro™ technology atomizes water into millions of droplets to create 10 times more water surface area than a standard shower, all while using up to 70% less water.",
+      "We know that installing a shower may seem intimidating. Don’t worry. The Nebia Shower System was designed to be easy to install, and this guide includes everything you need for the installation process. If any step in this guide is unclear, watch our installation videos. If you do not feel comfortable performing any step yourself, please contact a plumber."
+    ],
+    "videoId":"196371829",
+    "steps": [
+      "Unpack your box.",
+      "Gather other tools you might need to uninstall your current showerhead: 1) wrench or vise grip; 2) box cutter or knife."
+    ],
+    "caution": "The Dock is magnetic. If you have a pacemaker, we recommend you keep the Dock at a safe distance (more than 12\") from your chest. Please do not use electronics near the Dock.",
+    "accordion": [
+      {
+        "title": "Will the magnets affect my pacemaker?",
+        "text": [
+          "We recommend keeping Dock at a safe distance (more than 12\") from your chest."
+        ],
+        "video": ""
+      },
+      {
+        "title": "Can the magnetic Dock damage my phone?",
+        "text": [
+          "This is highly unlikely, but it’s better to be safe than sorry. Please do not use electronics near the Dock."
+        ],
+        "video": ""
+      }
+    ],
+    "previous": {
+      "link": "#!",
+      "title": "Previous step"
+    },
+    "next": {
+      "link": "#!",
+      "title": "Uninstalling your old showerhead"
+    }
+  }
+
+}

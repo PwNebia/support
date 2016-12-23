@@ -1,0 +1,14 @@
+.hero {
+  // background: url('https://p6.zdassets.com/hc/theme_assets/1316295/200478748/hero-bg.jpg') no-repeat center center;
+  background: url(unquote('$homepage_background_image')) no-repeat center center;
+  background-size: cover;
+  margin-top: -50px; //unpads the top of the body beneath the fixed nav
+  padding: units(22) 0 units(16);
+}
+
+.hero__title {
+  @extend %heading--large;
+  color: #fff;
+  text-align: center;
+  margin-bottom: units(6);
+}

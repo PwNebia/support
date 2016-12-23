@@ -1,0 +1,74 @@
+.installation {
+  background-color: color(gallery);
+}
+
+.installation-blocks {
+  display: flex;
+  flex-flow: row wrap;
+  padding: units(3) 0;
+}
+
+.installation-block {
+  background-color: #fff;
+  border: 2px solid color(alto);
+  margin: 0 units(2);
+  padding: units(1.5);
+  text-align: center;
+  width: 100%;
+
+
+  @include bp(small) {
+    width: calc(50% - #{units(4)})
+  }
+
+  &:first-of-type {
+    @include bp(small-down) {
+      margin-bottom: units(2);
+    }
+  }
+}
+
+.installation-block__link {
+  border: 2px solid color(alto);
+  color: color(charade);
+  display: block;
+  height: 100%;
+  padding: units(6) units(3);
+
+  @include bp(medium) {
+    padding: units(12) units(6);
+  }
+
+  &:focus,
+  &:hover {
+    border-color: color(denim);
+    color: color(denim);
+    opacity: 1;
+    text-decoration: none;
+
+    .installation-block__icon {
+      svg {
+        fill: color(denim);
+      }
+    }
+  }
+}
+
+.installation-block__title {
+  @extend %heading--medium;
+  margin-bottom: units(2);
+}
+
+.installation-block__info {
+  @extend %label;
+  color: color(gray);
+}
+
+.installation-block__icon {
+  margin-bottom: units(2);
+
+  svg {
+    fill: color(charade);
+    width: 40px;
+  }
+}

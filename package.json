@@ -1,0 +1,12 @@
+{
+  "name": "nebia-help-center",
+  "version": "1.0.0",
+  "description": "Custom theme for Zendesk help center",
+  "main": "index.js",
+  "author": "Viget",
+  "license": "MIT",
+  "dependencies": {
+    "blendid": "^4.0.0-blendid-beta-11",
+    "jquery": "^3.1.1"
+  }
+}

@@ -1,0 +1,67 @@
+{% extends 'layouts/application.html' %}
+
+{% block content %}
+
+<div class="container">
+  <nav class="article-sub-nav">
+    {% call fakeData('{{ breadcrumbs }}', zdTemplatingEnabled) %}
+      <ol class="breadcrumbs">
+        <li title="Home">
+          <a href="#!">Home</a>
+        </li>
+        <li title="Installation">
+          <a href="#!">Installation</a>
+        </li>
+        <li title="04. Prepare the Bracket">04. Prepare the Bracket</li>
+      </ol>
+    {% endcall %}
+
+    {# {% call fakeData('{{search scoped=true submit=false}}', zdTemplatingEnabled) %}{% endcall %} #}
+    <section class="article-search">
+      <form accept-charset="UTF-8" action="/hc/en-us/search" class="search" method="get" role="search">
+        <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input id="query" name="query" placeholder="Search Nebia Support" type="search" />
+        <button class="search-btn" type="submit">{{ sprite('search') }}</button>
+      </form>
+    </section>
+  </nav>
+</div>
+
+<section class="search-results">
+  <div class="container">
+    <h1 class="search-results__query">35 results for "Showerhead"</h1>
+    <ul class="search-results__list">
+      {% for i in range(0, 11) %}
+      <li class="search-result">
+        <h2 class="search-result__title">
+          <a href="#!">01 Wrap the Adapter</a>
+        </h2>
+        <p class="search-result__excerpt">This is the first couple lines of the article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla unde reprehenderit consectetur incidunt.</p>
+      </li>
+      {% endfor %}
+    </ul>
+    <nav class="pagination">
+      <ul>
+        <li class="pagination-current">
+          <span>1</span>
+        </li>
+        <li>
+          <a href="/hc/en-us/search?page=2&amp;preview%5Btheme_id%5D=115000180628&amp;preview_as_role=manager&amp;query=nebia&amp;use_theme_settings=false&amp;utf8=%E2%9C%93#results" rel="next">2</a>
+        </li>
+        <li>
+          <a href="/hc/en-us/search?page=3&amp;preview%5Btheme_id%5D=115000180628&amp;preview_as_role=manager&amp;query=nebia&amp;use_theme_settings=false&amp;utf8=%E2%9C%93#results">3</a>
+        </li>
+        <li class="pagination-next">
+          <a href="/hc/en-us/search?page=2&amp;preview%5Btheme_id%5D=115000180628&amp;preview_as_role=manager&amp;query=nebia&amp;use_theme_settings=false&amp;utf8=%E2%9C%93#results" rel="next">›</a>
+        </li>
+        <li class="pagination-last">
+          <a href="/hc/en-us/search?page=3&amp;preview%5Btheme_id%5D=115000180628&amp;preview_as_role=manager&amp;query=nebia&amp;use_theme_settings=false&amp;utf8=%E2%9C%93#results">»</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
+{% endblock %}
+
+

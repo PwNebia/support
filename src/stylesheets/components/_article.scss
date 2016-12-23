@@ -1,0 +1,448 @@
+.article-bg {
+  @include bp(medium) {
+    background: linear-gradient(to right, color(gallery) 0%, color(gallery) 50%, #fff 50%);
+  }
+}
+
+.article-container {
+  background-color: #fff;
+  border-top: 2px solid color(gallery);
+
+  @include bp(medium) {
+    display: flex;
+  }
+}
+
+.article-sidebar {
+  background-color: color(gallery);
+  padding: units(2) units(3);
+
+  @include bp(medium) {
+    padding: units(3) units(4);
+  }
+
+  &.-is-open {
+    @include bp(medium-down) {
+      .section-articles__mobile-toggle {
+        .-opened {
+          display: block;
+        }
+
+        .-closed {
+          display: none;
+        }
+      }
+
+      .section-articles__list {
+        display: block;
+      }
+    }
+  }
+
+  @include bp(medium) {
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 300px;
+  }
+}
+
+.section-articles__title {
+  @extend %heading--smaller;
+  position: relative;
+
+  // @include bp(medium-down) {
+  //   &::after {
+  //     content: ' articles';
+  //   }
+  // }
+
+  @include bp(medium) {
+    margin-bottom: units(3);
+  }
+}
+
+.section-articles__mobile-toggle {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  top: 0;
+  width: 100%;
+
+  .-opened {
+    display: none;
+    fill: color(shark);
+  }
+
+  .-closed {
+    fill: color(denim);
+  }
+
+  svg {
+    width: 20px;
+  }
+
+  @include bp(medium) {
+    display: none;
+  }
+}
+
+.section-articles__list {
+  @extend %body--medium;
+
+  @include bp(medium-down) {
+    display: none;
+  }
+
+  li {
+    padding: units(1.5) 0;
+
+    &:not(:last-child) {
+      border-bottom: 2px solid color(alto);
+    }
+
+    &.-is-active {
+      color: color(shark);
+    }
+  }
+}
+
+.section-article__link {
+  display: block;
+}
+
+.article {
+  padding: units(3) 0;
+
+  @include bp(medium) {
+    flex-grow: 1;
+    padding: units(3) units(5);
+  }
+}
+
+.article-title {
+  @extend %heading--large;
+  margin-bottom: units(3);
+}
+
+.article-video {
+  margin: units(3) 0;
+}
+
+.article-body {
+  p {
+    @extend %body--large;
+    font-family: font(serif);
+    margin-bottom: units(2);
+  }
+}
+.article-caution {
+  align-items: center;
+  background-color: color(gallery);
+  border-radius: 10px;
+  border: 2px solid color(alto);
+  display: flex;
+  margin: units(5) 0;
+  padding: units(2) units(3);
+}
+
+.article-caution__icon {
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding-right: units(2);
+
+  svg {
+    fill: color(burntOrange);
+    width: 20px;
+  }
+}
+
+.article-caution__text {
+  flex-grow: 1;
+}
+
+.article-caution__title {
+  display: block;
+  font-weight: 700;
+  margin-bottom: units(1);
+  text-transform: uppercase;
+}
+
+.article-caution__desc {
+  font-family: font(serif);
+}
+
+.article-body ol {
+  counter-reset: item;
+
+  li {
+    @extend %body--large;
+    // display: flex;
+    font-family: font(serif);
+    margin-bottom: units(3);
+
+    &::before {
+      @extend %body--large;
+      align-items: center;
+      border-radius: 50%;
+      border: 2px solid color(denim);
+      color: color(denim);
+      content: counter(item);
+      counter-increment: item;
+      display: flex;
+      // flex-grow: 0;
+      // flex-shrink: 0;
+      float: left;
+      font-family: font(sans-serif);
+      height: 44px;
+      justify-content: center;
+      margin-right: units(3);
+      width: 44px;
+    }
+  }
+}
+
+// These styles are intentionally vague; it's the only way to target elements inside the article body (without more custom markup)
+.article-troubleshooting {
+  margin-top: units(4);
+
+  p {
+    color: color(gray);
+    font-size: 16px;
+
+    &:first-child {
+      border-bottom: 2px solid color(gallery);
+      color: #555;
+      font-family: font(sans-serif);
+      font-size: 22px;
+      font-weight: 100;
+      margin-bottom: units(3);
+      padding-bottom: units(1.5);
+
+      @include bp(medium) {
+        font-size: 28px;
+      }
+    }
+
+    strong {
+      color: #555;
+      font-family: font(sans-serif);
+      font-weight: 400 !important;
+    }
+
+    &:nth-child(2n + 3):not(:last-child) {
+      border-bottom: 2px solid color(gallery);
+      margin-bottom: units(2);
+      padding-bottom: units(2);
+    }
+  }
+}
+
+.article-troubleshooting__topic {
+  border-top: 2px solid color(gallery);
+  color: #555;
+  font-family: font(sans-serif);
+  font-weight: 400 !important;
+  margin-bottom: units(2);
+  padding-top: units(2);
+
+}
+
+.article-troubleshooting__answer {
+  color: color(gray);
+  font-family: font(serif);
+  line-height: 1.6;
+  margin-bottom: units(2);
+}
+
+
+
+// Removed because of Zendesk's limited content-entry abilities
+// .article-troubleshooting__title {
+//   @extend %heading--smaller;
+//   margin-bottom: units(3);
+// }
+
+// .article-troubleshooting__list {
+//   li {
+//     border-top: 2px solid color(alto);
+//     padding: units(2) 0;
+//     position: relative;
+
+//     &:last-child {
+//       border-bottom: 2px solid color(alto);
+//     }
+
+//     &.-is-open {
+//       .article-troubleshooting__item-toggle-icon {
+//         .-opened {
+//           display: block;
+//         }
+
+//         .-closed {
+//           display: none;
+//         }
+//       }
+
+//       .article-troubleshooting__item-details {
+//         display: block;
+//       }
+//     }
+//   }
+// }
+
+// .article-troubleshooting__item-toggle {
+//   display: flex;
+//   justify-content: space-between;
+//   text-align: left;
+//   width: 100%;
+// }
+
+// .article-troubleshooting__item-title {
+//   @extend %body--large;
+//   font-family: font(sans-serif);
+// }
+
+// .article-troubleshooting__item-toggle-icon {
+//   color: color(denim);
+//   margin-left: units(2);
+
+//   svg {
+//     width: 20px;
+//   }
+
+//   .-opened {
+//     display: none;
+//     fill: color('shark');
+//   }
+
+//   .-closed {
+//     fill: color('denim');
+//   }
+// }
+
+// .article-troubleshooting__item-details {
+//   display: none;
+//   margin-bottom: units(4);
+// }
+
+// .article-troubleshooting__item-video {
+//   margin: units(3) 0;
+// }
+
+.article-prev-next {
+  @extend %body--large;
+  border-top: 2px solid color(gallery);
+  display: flex;
+  justify-content: space-between;
+  margin: units(7) 0 0;
+  padding: units(3) 0;
+
+  @include bp(medium) {
+    margin: units(7) units(-5) 0; //un-pad this element
+    padding: units(3) units(5);
+  }
+}
+
+.article-prev,
+.article-next {
+  svg {
+    fill: color(denim);
+    position: relative;
+    top: 2px;
+    width: 20px;
+  }
+}
+
+@include bp(small-down) {
+  .article-prev,
+  .article-next {
+    .-text {
+      display: none;
+    }
+  }
+
+  .article-prev a {
+    &::after {
+      content: 'Prev';
+    }
+  }
+  .article-next a {
+    &::before {
+      content: 'Next';
+    }
+  }
+}
+
+.article-votes {
+  border-top: 2px solid color(gallery);
+  padding: units(3) 0;
+  text-align: center;
+
+  @include bp(medium) {
+    margin: 0 units(-5); //un-pad this element
+    padding: units(7) units(5);
+  }
+}
+
+.article-votes-question {
+  @extend %heading--smaller;
+}
+
+.article-votes-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: units(3);
+}
+
+.article-vote {
+  border-radius: 30px;
+  border: 2px solid color(denim);
+  display: block;
+  margin: 0 units(2);
+  padding: units(2) units(8);
+
+  &::before {
+    content: attr(title);
+  }
+
+  &:hover {
+    background-color: color(denim);
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.article-relatives {
+  margin: units(6) 0;
+
+  @include bp(medium) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.recent-articles,
+.related-articles {
+  @extend %body--medium;
+
+  @include bp(medium) {
+    width: 40%;
+  }
+
+  h3 {
+    @extend %body--large;
+    margin-bottom: units(1.5);
+  }
+
+  li {
+    margin-bottom: units(1.5);
+  }
+}
+
+.recent-articles {
+  @include bp(medium-down) {
+    margin-bottom: units(5);
+  }
+}

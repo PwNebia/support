@@ -1,0 +1,44 @@
+.index {
+  border-top: 2px solid color(gallery);
+  padding: units(4) 0;
+}
+
+.index__title {
+  @extend %heading--large;
+  margin-bottom: units(6);
+}
+
+.index-columns {
+  @include bp(small) {
+    display: flex;
+  }
+}
+
+.index-column {
+  margin-bottom: units(4);
+
+  @include bp(small) {
+    max-width: 250px;
+
+    &:not(:last-child) {
+      margin-right: units(10);
+    }
+  }
+}
+
+.index-column__title {
+  @extend %heading--smaller;
+  margin-bottom: units(2);
+}
+
+.index-column__link {
+  @extend %body--medium;
+  line-height: 1.5;
+  margin-bottom: units(2);
+
+  &.-see-more {
+    border-top: 2px solid color(gallery);
+    margin-top: units(2);
+    padding-top: units(2);
+  }
+}

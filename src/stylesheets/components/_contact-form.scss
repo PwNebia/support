@@ -1,0 +1,80 @@
+.contact-form {
+  background-color: color(gallery);
+  border-top: 2px solid color(alto);
+  padding: units(4) 0;
+
+  .form {
+    background-color: #fff;
+    border: 2px solid color(alto);
+    margin: 0 auto;
+    max-width: 600px;
+    padding: units(3);
+  }
+
+  .form-field {
+    margin-bottom: units(3);
+
+    label {
+      color: color(gray);
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      margin-bottom: units(1);
+      text-transform: uppercase;
+    }
+
+    input, textarea {
+      color: color(charade);
+      display: block;
+      font-family: font(serif);
+      width: 100%;
+    }
+
+    input {
+      border: none;
+      border-bottom: 1px dotted color(shark);
+    }
+
+    textarea {
+      border: 1px dotted color(shark);
+      min-height: 100px;
+    }
+  }
+
+  input[type="submit"] {
+    background: none;
+    border-radius: 30px;
+    border: 0;
+    border: 2px solid color(denim);
+    color: color(denim);
+    cursor: pointer;
+    display: block;
+    font-family: font(sans-serif);
+    margin: 0 auto;
+    padding: units(2) units(8);
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: color(denim);
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .upload-dropzone {
+    border: 1px dotted color(shark);
+
+    span,
+    span a {
+      font-family: font(serif);
+      font-size: 14px;
+    }
+  }
+}
+
+.contact-form__title {
+  @extend %heading--large;
+  margin-bottom: units(4);
+  text-align: center;
+}
