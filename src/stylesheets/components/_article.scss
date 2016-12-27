@@ -401,7 +401,11 @@
   border: 2px solid color(denim);
   display: block;
   margin: 0 units(2);
-  padding: units(2) units(8);
+  padding: units(2) units(6);
+
+  @include bp(small) {
+    padding: units(2) units(8);
+  }
 
   &::before {
     content: attr(title);

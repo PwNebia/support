@@ -2,10 +2,11 @@ var $ = require('jquery')
 
 var app = app || {
   init: function() {
-    app.sectionArticles.init();
-    app.homeVideo.init();
-    app.homeFAQ.init();
-    // app.troubleShooting.init();
+    app.sectionArticles.init()
+    app.homeVideo.init()
+    app.homeFAQ.init()
+    app.contactForm.init()
+    // app.troubleShooting.init()
   },
 
   // troubleShooting: {
@@ -32,8 +33,8 @@ var app = app || {
 
   sectionArticles: {
     init: function() {
-      app.sectionArticles.variables();
-      app.sectionArticles.listen();
+      app.sectionArticles.variables()
+      app.sectionArticles.listen()
     },
 
     variables: function() {
@@ -53,8 +54,8 @@ var app = app || {
 
   homeVideo: {
     init: function() {
-      app.homeVideo.variables();
-      app.homeVideo.listen();
+      app.homeVideo.variables()
+      app.homeVideo.listen()
     },
 
     variables: function() {
@@ -85,9 +86,9 @@ var app = app || {
 
   homeFAQ: {
     init: function() {
-      app.homeFAQ.variables();
-      app.homeFAQ.listen();
-      app.homeFAQ.columnize();
+      app.homeFAQ.variables()
+      app.homeFAQ.listen()
+      app.homeFAQ.columnize()
     },
 
     variables: function() {
@@ -122,9 +123,40 @@ var app = app || {
 
       this.$container.addClass(this.columnsClass)
     }
+  },
+
+  contactForm: {
+    init: function() {
+      app.contactForm.variables()
+      app.contactForm.preloadInfo()
+    },
+
+    variables: function() {
+      this.$form     = $('.contact-form')
+      this.$subject  = $('#request_subject')
+      this.parameter = 'subject='
+    },
+
+    preloadInfo: function() {
+      //Only run on contact page
+      if (this.$form.length && this.$subject.length) {
+        this.$subject.val(app.contactForm.gatherInfo())
+      }
+    },
+
+    gatherInfo: function() {
+      var fullInfo = window.location.search.slice(1)
+      if (fullInfo.length) {
+        var infoBegins = fullInfo.indexOf(this.parameter)
+        if (infoBegins > -1) {
+          var info = fullInfo.substring(infoBegins + this.parameter.length, fullInfo.length)
+          return info.replace(/%20/g, ' ')
+        }
+      }
+    }
   }
 }
 
 $(document).ready(function(){
-  app.init();
+  app.init()
 })

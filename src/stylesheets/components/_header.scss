@@ -1,4 +1,4 @@
-//Pulled straight from Nebia's current site (post-processing)
+//Pulled from Nebia's current site (post-processing)
 .header.-fixed {
     background: rgba(27, 30, 37, .85);
     opacity: 1;
@@ -7,11 +7,10 @@
     position: fixed;
     transform: translateY(0);
     transition: transform .25s ease-out;
-    z-index: 5;
+    z-index: 9;
     top: 0;
     width: 100%;
 }
-// end code dump
 
 //Add padding for fixed header
 body {
