@@ -13,7 +13,8 @@
 .faq__info {
   @extend %body--medium;
   color: #fff;
-  font-family: font(serif);
+  font-family: font(sans-serif);
+  font-weight: 300;
   text-align: center;
 }
 
@@ -97,7 +98,8 @@
 .faq__help {
   @extend %body--medium;
   color: #fff;
-  font-family: font(serif);
+  font-family: font(sans-serif);
+  font-weight: 300;
   padding-top: units(5);
   position: relative;
   text-align: center;

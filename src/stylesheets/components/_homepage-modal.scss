@@ -55,8 +55,11 @@
   bottom: 100%;
   color: #fff;
   left: 50%;
+  height: 30px;
   margin: 0 0 units(1) -15px;
+  padding: 0;
   position: absolute;
+  width: 30px;
 
   @include bp(small) {
     left: 100%;

@@ -11,11 +11,16 @@
 .installation-block {
   background-color: #fff;
   border: 2px solid color(alto);
+  color: color(charade);
+  display: block;
   margin: 0 units(2);
-  padding: units(1.5);
+  padding: units(6) units(3);
   text-align: center;
   width: 100%;
 
+  @include bp(medium) {
+    padding: units(12) units(6);
+  }
 
   @include bp(small) {
     width: calc(50% - #{units(4)})
@@ -25,18 +30,6 @@
     @include bp(small-down) {
       margin-bottom: units(2);
     }
-  }
-}
-
-.installation-block__link {
-  border: 2px solid color(alto);
-  color: color(charade);
-  display: block;
-  height: 100%;
-  padding: units(6) units(3);
-
-  @include bp(medium) {
-    padding: units(12) units(6);
   }
 
   &:focus,
@@ -52,6 +45,10 @@
       }
     }
   }
+}
+
+.installation-block__link {
+
 }
 
 .installation-block__title {

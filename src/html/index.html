@@ -20,43 +20,37 @@
 
 <section class="installation">
   <div class="container">
-    <ul class="installation-blocks">
-      <li class="installation-block">
-        <a id="open-install-video" class="installation-block__link" href="#">
-          <h2 class="installation-block__title">Installation Video</h2>
-          <div class="installation-block__info">
-            <div class="installation-block__icon">{{ sprite('play') }}</div>
-            Watch now
-          </div>
-        </a>
-      </li>
-      <li class="installation-block">
-        <a class="installation-block__link" href="#!">
-          <h2 class="installation-block__title">Step by Step Installation Guide</h2>
-          <div class="installation-block__info">
-            Instructions, videos &amp; support
-          </div>
-        </a>
-      </li>
-    </ul>
+    <div class="installation-blocks">
+      <a class="installation-block" id="open-install-video" href="#">
+        <h2 class="installation-block__title">Installation Video</h2>
+        <div class="installation-block__info">
+          <div class="installation-block__icon">{{ sprite('play') }}</div>
+          Watch now
+        </div>
+      </a>
+      <a class="installation-block" href="#!">
+        <h2 class="installation-block__title">Step by Step Installation Guide</h2>
+        <div class="installation-block__info">
+          Instructions, videos &amp; support
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
 <section class="categories">
   <div class="container">
     <h2 class="categories__title">I have a question about</h2>
-    <ul class="category-blocks">
+    <div class="category-blocks">
       {# {{#each categories}} #}
       {% for category in categories %}
-        <li class="category-block">
-          <a href='{{url}}' class="category-block__link">
+        <a class="category-block" href='{{url}}' >
             {{ sprite(category.icon) }}
             <h3 class="category-block__title">{{ category.name }}</h3>
-          </a>
-        </li>
+        </a>
       {% endfor %}
       {# {{/each}} #}
-    </ul>
+    </div>
   </div>
 </section>
 

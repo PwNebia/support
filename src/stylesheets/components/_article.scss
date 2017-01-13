@@ -122,7 +122,7 @@
 }
 
 .article-title {
-  @extend %heading--large;
+  @extend %heading--medium;
   margin-bottom: units(3);
 }
 
@@ -131,10 +131,20 @@
 }
 
 .article-body {
-  p {
-    @extend %body--large;
+  p, ul li {
+    @extend %body--medium;
     font-family: font(serif);
     margin-bottom: units(2);
+  }
+
+  ul {
+    list-style: disc;
+    margin-left: units(4);
+  }
+
+  img {
+    height: auto;
+    max-width: 100%;
   }
 }
 .article-caution {

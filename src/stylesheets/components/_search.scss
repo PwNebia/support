@@ -23,8 +23,9 @@
   input[type="search"] {
     background: none;
     border: none;
-    border-bottom: 1px dotted color(shark);
-    font-family: font(serif);
+    border-bottom: 3px dotted color(shark);
+    font-family: font(sans-serif);
+    font-weight: 300;
     padding: units(1);
     width: 100%;
 
