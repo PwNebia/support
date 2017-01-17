@@ -21,9 +21,12 @@
   position: relative;
 
   input[type="search"] {
+    appearance: none;
     background: none;
     border: none;
     border-bottom: 3px dotted color(shark);
+    border-radius: 0;
+    box-sizing: border-box;
     font-family: font(sans-serif);
     font-weight: 300;
     padding: units(1);
