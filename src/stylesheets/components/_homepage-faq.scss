@@ -91,8 +91,15 @@
 .faq__item__answer {
   color: color(gray);
   display: none;
-  font-family: font(serif);
+  font-family: font(sans-serif);
+  font-weight: 100;
   line-height: 1.4;
+
+  p,
+  div,
+  span {
+    font-weight: 100 !important;
+  }
 }
 
 .faq__help {

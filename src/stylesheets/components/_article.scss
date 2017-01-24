@@ -137,7 +137,9 @@
 }
 
 .article-body {
-  p, ul li {
+  p,
+  ul li,
+  div {
     @extend %body--medium;
     font-family: font(serif);
     margin-bottom: units(2);

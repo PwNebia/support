@@ -51,6 +51,13 @@
     stroke: currentColor;
     width: 35px;
   }
+
+  .sprite.-arrow-left {
+    svg {
+      fill: currentColor;
+      stroke: none;
+    }
+  }
 }
 
 .category-block__title {
